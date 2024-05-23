@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Bebidas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pedido de Bebidas</h1>
+        <form id="pedidoForm">
+            <label for="mesa">Número de Mesa:</label>
+            <select id="mesa" name="mesa" required>
+                <option value="">Seleccionar</option>
+                <option value="3">3</option>
+                <option value="3.5">3.5</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="5.5">5.5</option>
+                <option value="6">6</option>
+                <option value="6.5">6.5</option>
+                <option value="6.75">6.75</option>
+                <option value="7">7</option>
+                <option value="7.5">7.5</option>
+                <option value="7.75">7.75</option>
+                <option value="8">8</option>
+                <option value="8.5">8.5</option>
+                <option value="8.75">8.75</option>
+                <option value="Sala 1">Sala 1</option>
+                <option value="Sala 1.5">Sala 1.5</option>
+                <option value="Sala 2">Sala 2</option>
+                <option value="Sala 3">Sala 3</option>
+                <option value="Sala 4">Sala 4</option>
+                <option value="Sala 5">Sala 5</option>
+                <option value="Sala 5.5">Sala 5.5</option>
+                <option value="Sala 6">Sala 6</option>
+                <option value="Sala 7">Sala 7</option>
+                <option value="Sala 8">Sala 8</option>
+                <option value="Sala 9">Sala 9</option>
+                <option value="Sala 10">Sala 10</option>
+                <option value="Sala 11">Sala 11</option>
+                <option value="Sala 12">Sala 12</option>
+                <option value="Sala Puerta">Sala Puerta</option>
+            </select>
+
+            <div class="bebidas">
+                <h2>Café</h2>
+                <label>
+                    Americano <input type="number" name="Americano" min="0">
+                </label>
+                <label>
+                    Solo <input type="number" name="Solo" min="0">
+                </label>
+                <label>
+                    Irlandes <input type="number" name="Irlandes" min="0">
+                </label>
+                <label>
+                    Cortado <input type="number" name="Cortado" min="0">
+                </label>
+                <label>
+                    Con Leche <input type="number" name="Con Leche" min="0">
+                </label>
+                <label>
+                    Capuccino <input type="number" name="Capuccino" min="0">
+                </label>
+            </div>
+            
+            <div class="bebidas">
+                <h2>Cerveza</h2>
+                <label>
+                    Botellin <input type="number" name="Botellin" min="0">
+                </label>
+                <label>
+                    Estrella <input type="number" name="Estrella" min="0">
+                </label>
+                <label>
+                    Caña <input type="number" name="Caña" min="0">
+                </label>
+                <label>
+                    0,0 <input type="number" name="0,0" min="0">
+                </label>
+            </div>
+
+            <div class="bebidas">
+                <h2>Refrescos</h2>
+                <label>
+                    Cola <input type="number" name="Cola" min="0">
+                </label>
+                <label>
+                    Light <input type="number" name="Light" min="0">
+                </label>
+                <label>
+                    Rojo <input type="number" name="Rojo" min="0">
+                </label>
+                <label>
+                    Spa <input type="number" name="Spa" min="0">
+                </label>
+                <label>
+                    Fanta <input type="number" name="Fanta" min="0">
+                </label>
+                <label>
+                    Ice Thee <input type="number" name="Ice Thee" min="0">
+                </label>
+                <label>
+                    Bitter L <input type="number" name="Bitter L" min="0">
+                </label>
+                <label>
+                    Sprite <input type="number" name="Sprite" min="0">
+                </label>
+                <label>
+                    Cassis <input type="number" name="Cassis" min="0">
+                </label>
+                <label>
+                    Manzana <input type="number" name="Manzana" min="0">
+                </label>
+                <label>
+                    Fristi <input type="number" name="Fristi" min="0">
+                </label>
+                <label>
+                    Chocomel <input type="number" name="Chocomel" min="0">
+                </label>
+            </div>
+
+            <div class="bebidas">
+                <h2>Vinos</h2>
+                <label>
+                    Tinto <input type="number" name="Tinto" min="0">
+                </label>
+                <label>
+                    Blanco <input type="number" name="Blanco" min="0">
+                </label>
+                <label>
+                    Dulce <input type="number" name="Dulce" min="0">
+                </label>
+                <label>
+                    Verano <input type="number" name="Verano" min="0">
+                </label>
+                <label>
+                    Cava <input type="number" name="Cava" min="0">
+                </label>
+                <label>
+                    Sangria <input type="number" name="Sangria" min="0">
+                </label>
+            </div>
+
+            <div class="bebidas">
+                <h2>Otros</h2>
+                <label>
+                    Caramelo <input type="number" name="Caramelo" min="0">
+                </label>
+                <label>
+                    Chupito <input type="number" name="Chupito" min="0">
+                </label>
+                <label>
+                    43 <input type="number" name="43" min="0">
+                </label>
+                <label>
+                    Crema <input type="number" name="Crema" min="0">
+                </label>
+            </div>
+
+            <button type="submit">Enviar Pedido</button>
+        </form>
+        <button id="exportButton">Exportar Informe</button>
+        <div id="result"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
