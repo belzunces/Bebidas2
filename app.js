@@ -3,9 +3,9 @@ document.getElementById('pedidoForm').addEventListener('submit', function(event)
     const mesa = document.getElementById('mesa').value;
     const inputs = document.querySelectorAll('input[type="number"]');
     const selectedBebidas = [];
-    inputs.forEach((input) => {
+    inputs.forEach((```javascript
+input) => {
         if (input.value > 0) {
-```javascript
             selectedBebidas.push(`${input.value} ${input.name}`);
         }
     });
@@ -16,45 +16,17 @@ document.getElementById('pedidoForm').addEventListener('submit', function(event)
         <p><strong>Bebidas Seleccionadas:</strong> ${selectedBebidas.join(', ')}</p>
     `;
     document.getElementById('result').innerHTML = result;
-    generateReport(mesa, selectedBebidas);
 });
 
-document.getElementById('exportButton').addEventListener('click', function() {
-    exportReport();
+document.getElementById('printButton').addEventListener('click', function() {
+    printReport();
 });
 
-document.getElementById('emailButton').addEventListener('click', function() {
-    sendEmail();
-});
+function printReport() {
+    const printContent = document.getElementById('result').innerHTML;
+    const originalContent = document.body.innerHTML;
 
-function generateReport(mesa, bebidas) {
-    const report = `Número de Mesa: ${mesa}\nBebidas Seleccionadas:\n${bebidas.join('\n')}`;
-    sessionStorage.setItem('report', report);
-}
-
-function exportReport() {
-    const report = sessionStorage.getItem('report');
-    if (report) {
-        const blob = new Blob([report], { type: 'text/plain' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'informe_pedido.txt';
-        link.click();
-    } else {
-        alert('No hay informe disponible para exportar.');
-    }
-}
-
-function sendEmail() {
-    const email = prompt('Introduce la dirección de correo electrónico:');
-    if (email) {
-        const report = sessionStorage.getItem('report');
-        if (report) {
-            const subject = 'Informe de Pedido';
-            const body = encodeURIComponent(report);
-            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
-        } else {
-            alert('No hay informe disponible para enviar.');
-        }
-    }
+    document.body.innerHTML = printContent;
+    window.print();
+    document.body.innerHTML = originalContent;
 }
